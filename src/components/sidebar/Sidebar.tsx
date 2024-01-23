@@ -1,9 +1,9 @@
 
 import { CiLogout } from "react-icons/ci"
-import { SIdebarItem } from "."
+import { LogoutButton, SIdebarItem } from ".."
 import Image from "next/image"
 import Link from "next/link"
-import { IoBagAddOutline, IoCalendarOutline, IoCheckboxOutline, IoListOutline } from "react-icons/io5"
+import { IoBagAddOutline, IoCalendarOutline, IoCheckboxOutline, IoListOutline, IoPerson } from "react-icons/io5"
 import { FaCookieBite } from "react-icons/fa6"
 
 
@@ -35,6 +35,11 @@ const menuItems = [
         path: '/dashboard/products',
         icon: <IoBagAddOutline size={30} />,
         title: 'Products',
+    },
+    {
+        path: '/dashboard/profile',
+        icon: <IoPerson size={30} />,
+        title: 'Profile',
     }
 ]
 
@@ -84,10 +89,7 @@ export const Sidebar = async() => {
             </div>
 
             <div className="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
-                <button className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
-                    <CiLogout />
-                    <span className="group-hover:text-gray-700">Logout</span>
-                </button>
+                <LogoutButton/>
             </div>
         </aside>
     )
